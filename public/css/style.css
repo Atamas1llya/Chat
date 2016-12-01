@@ -1,0 +1,378 @@
+body {
+    background: whitesmoke;
+    font-family: courier;
+}
+a {
+    text-decoration: none;
+}
+.mainBackgr {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 1000px;
+    width: 100%;
+    min-height: 500px;
+    height: 100%;
+
+    background: url('/pictures/dirt.png');
+    background-size: cover;
+    background-position: center;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 1000px;
+    width: 100%;
+    min-height: 500px;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+}
+.info {
+    position: absolute;
+    top: 0;
+    height: 8%;
+    left: 20%;
+    width: 60%;
+
+    background: rgba(240, 0, 0,.8);
+    border: 1px solid black;
+    z-index: 9999999999999999;
+    display: none;
+    opacity: 0;
+
+    text-align: center;
+    font-size: 1.8vw;
+    font-family: courier;
+    line-height: 4.1vw;
+}
+
+.logoBox {
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    width: 20%;
+    height: 42%;
+    background-size: cover;
+    background-position: center;
+    transition: 0.2s;
+    perspective: 800px;
+    perspective-origin: center 0em;
+}
+.logoText {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 95%;
+    height: 20%;
+
+    text-align: center;
+    font-size: 2vw;
+    color: white;
+    opacity: 0;
+    transition: 0.2s;
+    cursor: pointer;
+    line-height: 4vw;
+}
+.logoBox:hover .logoText {
+    top: 100%;
+    opacity: 1;
+    transition: 0.8s;
+}
+.logoText:hover {
+    font-size: 2.05vw;
+    transition: 0.2s;
+}
+.side,
+.container {
+  width: 10em;
+  height: 10em;
+  }
+
+.container {
+  margin: 5em auto 0;
+  transform-style: preserve-3d;
+  animation: rotate 15s infinite linear;
+  }
+
+.side {
+  position: absolute;
+  width: 10em;
+  height: 10em;
+  /*box-shadow: 0 0 1px 0.4px black;*/
+  border: 1px solid black;
+  opacity: 1;
+  }
+.left, .right, .back, .front {
+    background: url("/pictures/grass.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.back {
+  transform: translateZ(-5em);
+  }
+.left {
+  transform: translateX(-5em) rotateY(90deg);
+  }
+.right {
+  transform: translateX(5em) rotateY(90deg);
+
+  }
+.top {
+  transform: translateY(-5em) rotateX(90deg);
+  background: url("/pictures/grassTop.png");
+  background-size: cover;
+  background-position: center;
+  }
+.bottom {
+  transform: translateY(5em) rotateX(90deg);
+
+  }
+.front {
+  transform: translateZ(5em);
+
+  }
+
+@keyframes rotate {
+  100% {
+    /*transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);*/
+    transform: rotateY(360deg);
+  }
+}
+
+.regBox {
+    position: absolute;
+    right: 0%;
+    width: 40%;
+    top: 0;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    border-left: 2px solid lightgrey;
+    z-index: 99999;
+    font-size: 1.2vw;
+    text-align: center;
+    line-height: 5vw;
+}
+.goLog, .goReg {
+    position: relative;
+    display: inline-block;
+
+    left: 0;
+    margin-left: 1vw;
+
+    width: 40%;
+    min-width: 200px;
+
+    top: 40%;
+    margin-top: 5vw;
+
+    height: 8%;
+    min-height: 50px;
+    border-bottom: 2px solid grey;
+    color: rgba(255,255,255,0.8);
+    font-size: 20px;
+    line-height: 40px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.goLog:hover, .goReg:hover {
+    color: rgba(255,255,255,1);
+    border-bottom: 2px solid white;
+    transition: 0.2s;
+}
+/*.goReg {
+    left: 55%;
+}*/
+input {
+    outline: none;
+    border: none;
+}
+.regNick, .regPass, .regPass2, .regAvatar {
+    position: relative;
+    top: 5%;
+    height: 10%;
+    left: 3%;
+    width: 94%;
+    margin-bottom: 1vw;
+
+    background: none;
+    border-bottom: 1px solid white;
+
+    z-index: 99999;
+    font-size: 2vw;
+    text-indent: 1vw;
+    color: white;
+
+    display: none;
+    font-family: courier;
+    opacity: 0;
+}
+.regGo {
+    position: absolute;
+    top: 60%;
+    height: 10%;
+    left: 50%;
+    width: 40%;
+    background: rgba(0,0,0,.5);
+    box-shadow: 0 0 0.5px white;
+    cursor: pointer;
+    letter-spacing: 0.2vw;
+    display: none;
+    color: white;
+    font-size: 1.5vw;
+    font-family: courier;
+    opacity: 0;
+}
+.regGo:hover, .logGo:hover {
+    background: rgba(255,255,255,.05);
+    transition: 0.2s;
+}
+.logNick, .logPass{
+    position: relative;;
+    left: 3%;
+    width: 94%;
+    top: 4%;
+    height: 10%;
+    margin-bottom: 1vw;
+    border-bottom: 1px solid white;
+
+    background: none;
+
+    font-family: courier;
+    font-size: 2vw;
+    text-indent: 1vw;
+    color: white;
+
+    display: none;
+    opacity: 0;
+}
+.logGo {
+    position: absolute;
+    top: 32%;
+    height: 10%;
+    left: 50%;
+    width: 40%;
+    background: rgba(0,0,0,.5);
+    box-shadow: 0 0 0.5px white;
+    cursor: pointer;
+    letter-spacing: 0.2vw;
+    display: none;
+    color: white;
+    font-size: 1.5vw;
+    font-family: courier;
+    opacity: 0;
+}
+
+.box {
+    position: absolute;
+    right: 0;
+    top: 0;
+    min-width: 500px;
+    width: 70vw;
+    min-height: 600px;
+    height: 99.5%;
+    background: rgba(0,0,0,.5);
+    display: none;
+    border-left: 2px solid white;
+    opacity: 0;
+}
+.mask {
+    position: absolute;
+    top: 0;
+    left: 0vw;
+    width: 100%;
+    height: 93%;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.messageBox {
+    position: relative;
+    top: 1%;
+    height: 8%;
+    left: 3%;
+    width: 96%;
+    margin-bottom: 5px;
+    border-bottom: 1px solid whitesmoke;
+}
+.nick {
+    position: absolute;
+    left: 68%;
+    top: 65%;
+    width: 25%;
+    height: 35%;
+    font-size: 15px;
+    color: grey;
+    line-height: 16px;
+    text-align: right;
+}
+.avatar {
+    position: absolute;
+    left: -1.5%;
+    top: 0;
+    width: 5.4%;
+    height: 102%;
+    background: grey;
+    background-size: 140%;
+    background-position: center;
+    /*border-radius: 25%;*/
+}
+.mess {
+    position: absolute;
+    left: 5%;
+    width: 90%;
+    top: 0;
+    height: 100%;
+
+    font-size: 220%;
+    line-height: 160%;
+    white-space: nowrap;
+    color: white;
+}
+.time {
+    position: absolute;
+    left: 94%;
+    top: 65%;
+    width: 6%;
+    height: 35%;
+
+    font-size: 15px;
+    color: grey;
+    line-height: 16px;
+    text-align: right;
+    border-left: 1px solid black;
+}
+.panel {
+    position: absolute;
+    bottom: 0;
+    left: 0vw;
+    width: 100%;
+    height: 6%;
+    z-index: 1000;
+    background: none;
+}
+.inWrite {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    left: 0%;
+    width: 85%;
+
+    font-size: 2vw;
+    background: rgba(0,0,0,.3);
+
+    color: white;
+    font-family: courier;
+    text-indent: 1vw;
+}
+.sendButton {
+    position: absolute;
+    top: 0;
+    /*height: calc(100% + 6px);*/
+    height: 100%;
+    box-shadow: 0 0 0.5px white;
+    background: none;
+    color: white;
+    left: 85%;
+    width: 15%;
+}

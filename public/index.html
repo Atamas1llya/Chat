@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>ChatBox</title>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/js/jquery-3.1.1.min.js"></script>
+        <script src="/js/script.js"></script>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        <div class="mainBackgr"></div>
+        <div class="overlay">
+            <div class="info"></div>
+            <div class="logoBox">
+                <a class="logoText" href="http://good-minecraft.ru/" target="_blank">Good-Minecraft</a>
+                <div class="container">
+                    <div class="back side"></div>
+                    <div class="left side"></div>
+                    <div class="right side"></div>
+                    <div class="top side"></div>
+                    <div class="bottom side"></div>
+                    <div class="front side"></div>
+                 </div>
+            </div>
+
+            <div class="regBox">
+                <!-- select -->
+                <div class="goLog" onclick="logIn()">Войти</div>
+                <div class="goReg" onclick="signUp()">Регистрация</div>
+                <!-- select -->
+                <!-- register -->
+                <input class="regNick" id="regNick" placeholder="Your nickname" type="text" />
+                <input class="regPass" id="regPass" placeholder="Your password" type="password" />
+                <input class="regPass2" id="regPass2" placeholder="Repeat password" type="password" />
+                <input class="regAvatar" id="regAvatar" placeholder="Avatar url" type="text" />
+                <input class="regGo" type="button" value="Register!" onclick="register()" />
+                <!-- register -->
+                <!-- login -->
+                <input class="logNick" id="logNick" type="text" placeholder="Nickname" />
+                <input class="logPass" id="logPass" type="password" placeholder="Password" />
+                <input class="logGo" type="button" onclick="loginon()" value="Login" />
+                <!-- login -->
+            </div>
+
+        </div>
+
+
+
+        <div class="box" id="box">
+            <div class="mask" id="mask"></div>
+            <div class="panel">
+                <input class="inWrite" type="text" id="inWrite" maxlength="45" />
+                <input class="sendButton" type="button" value="Send!" onclick="sendMessage()" />
+            </div>
+        </div>
+
+    </body>
+</html>
